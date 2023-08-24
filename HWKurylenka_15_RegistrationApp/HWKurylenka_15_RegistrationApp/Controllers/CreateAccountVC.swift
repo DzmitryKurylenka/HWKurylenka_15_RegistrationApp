@@ -29,22 +29,35 @@ class CreateAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ///Прозрачные strongPassIndicatorsViews
-        strongPassIndicatorsViews.forEach { view in
-            view.alpha = 0.2
-        }
+        strongPassIndicatorsViews.forEach { view in view.alpha = 0.2}
         ///Уменьшить скрол на высоту клавиатуры
         startKeyboardObserver()
-        
-        
-    }
-    
-    
-    
-    private.startKeyboardObserver() {
+        ///Скрытие клавиатуры при нажатии на любом месте на экране
+        hideKeyboardWhenTappedAround()
         
     }
     
+    private func startKeyboardObserver() {
+        ///Нотификация на открытие клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        ///Нотификация на закрытие клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets ///Боковой скрол так же ограничить до клавиатуры
+    }
+    
+    @objc private func keyboardWillHide() {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
 
     /*
     // MARK: - Navigation

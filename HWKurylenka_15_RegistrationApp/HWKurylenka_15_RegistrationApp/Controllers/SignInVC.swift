@@ -2,7 +2,6 @@
 //  SignInVC.swift
 //  HWKurylenka_15_RegistrationApp
 //
-//  Created by MACBOOK PRO 15,4 2017 ROK on 23/08/2023.
 //
 
 import UIKit
@@ -40,3 +39,13 @@ class SignInVC: UIViewController {
     */
 
 }
+
+///Продолжение нашего класса
+///В  Extension могут быть только методы
+extension SignInVC {
+    
+}
+
+
+
+
