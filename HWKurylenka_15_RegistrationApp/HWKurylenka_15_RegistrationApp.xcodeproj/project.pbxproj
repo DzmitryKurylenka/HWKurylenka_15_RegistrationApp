@@ -10,6 +10,7 @@
 		047A49382A969EE50006D9B3 /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047A49372A969EE50006D9B3 /* SignInStoryboard.storyboard */; };
 		047A493A2A96A6750006D9B3 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047A49392A96A6750006D9B3 /* SignUpStoryboard.storyboard */; };
 		047A493D2A96AFD30006D9B3 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A493C2A96AFD30006D9B3 /* SignInVC.swift */; };
+		047A493F2A96CB3A0006D9B3 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A493E2A96CB3A0006D9B3 /* CreateAccountVC.swift */; };
 		047E8ACB2A967808006F9340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E8ACA2A967808006F9340 /* AppDelegate.swift */; };
 		047E8ACD2A967808006F9340 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E8ACC2A967808006F9340 /* SceneDelegate.swift */; };
 		047E8AD22A967808006F9340 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047E8AD02A967808006F9340 /* MainStoryboard.storyboard */; };
@@ -21,6 +22,7 @@
 		047A49372A969EE50006D9B3 /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		047A49392A96A6750006D9B3 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 		047A493C2A96AFD30006D9B3 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		047A493E2A96CB3A0006D9B3 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		047E8AC72A967808006F9340 /* HWKurylenka_15_RegistrationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWKurylenka_15_RegistrationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047E8ACA2A967808006F9340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047E8ACC2A967808006F9340 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				047A493C2A96AFD30006D9B3 /* SignInVC.swift */,
+				047A493E2A96CB3A0006D9B3 /* CreateAccountVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			files = (
 				047E8ACB2A967808006F9340 /* AppDelegate.swift in Sources */,
 				047E8ACD2A967808006F9340 /* SceneDelegate.swift in Sources */,
+				047A493F2A96CB3A0006D9B3 /* CreateAccountVC.swift in Sources */,
 				047A493D2A96AFD30006D9B3 /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

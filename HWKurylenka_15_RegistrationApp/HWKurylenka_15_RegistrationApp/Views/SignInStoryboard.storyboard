@@ -63,6 +63,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="qa3-DO-go3" kind="show" id="6lX-WT-6ZJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -93,7 +96,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect email or password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLA-9Z-YRa">
                                                         <rect key="frame" x="0.0" y="40" width="343" height="19.333333333333329"/>
@@ -146,6 +149,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1054.1984732824426" y="-34.507042253521128"/>
+        </scene>
+        <!--SignUpStoryboard-->
+        <scene sceneID="11T-4S-raS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUpStoryboard" id="qa3-DO-go3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="99r-Kw-Xge"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxm-cp-YJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="-215"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oVl-DC-UZb">
