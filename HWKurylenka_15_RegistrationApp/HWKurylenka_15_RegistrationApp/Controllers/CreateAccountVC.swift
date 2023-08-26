@@ -26,6 +26,10 @@ class CreateAccountVC: UIViewController {
     ///scrollView
     @IBOutlet weak var scrollView: UIScrollView!
     
+    private var isValidEmail = false
+    private var isConfPass = false
+//    private var passwordStreigth = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ///Прозрачные strongPassIndicatorsViews
@@ -36,6 +40,44 @@ class CreateAccountVC: UIViewController {
         hideKeyboardWhenTappedAround()
         
     }
+    
+    @IBAction func emailTFAction(_ sender: UITextField) {
+        if let email = sender.text,
+        /// Проверка что поле не пустое
+           !email.isEmpty,
+        /// Верифицируем наш email
+           VerificationCervice.isValidEmail(email: email){
+            isValidEmail = true
+        } else {
+            isValidEmail = false
+        }
+        /// Скроем валидац сообщение если введен корректный email
+        incorrectEmailLbl.isHidden = isValidEmail
+    }
+    
+    @IBAction func passTFActoin(_ sender: UITextField) {
+        
+    }
+    
+    @IBAction func confPassTFActoin(_ sender: UITextField) {
+        if let confPassText = sender.text,
+           !confPassText.isEmpty,
+           let passText = passwordTF.text,
+           !passText.isEmpty {
+            isConfPass = VerificationCervice.isPassConfirm(pass1: passText, pass2: confPassText)
+        } else {
+            isConfPass = false
+        }
+        /// Скроем валидац сообщение если введен корректный confPassText
+        errorConfirmPassLbl.isHidden = isConfPass
+    }
+    
+    
+    
+    
+    
+    
+    
     
     private func startKeyboardObserver() {
         ///Нотификация на открытие клавиатуры

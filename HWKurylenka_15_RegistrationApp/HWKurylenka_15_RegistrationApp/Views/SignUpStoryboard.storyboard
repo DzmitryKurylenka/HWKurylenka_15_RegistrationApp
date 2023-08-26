@@ -87,6 +87,9 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <connections>
+                                                                            <action selector="emailTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="Hnq-1k-0Z1"/>
+                                                                        </connections>
                                                                     </textField>
                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkn-5B-JVB">
                                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="0.0"/>
@@ -149,6 +152,9 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                         <textInputTraits key="textInputTraits"/>
+                                                                                        <connections>
+                                                                                            <action selector="passTFActoin:" destination="Y6W-OH-hqX" eventType="editingChanged" id="n2r-9u-hCH"/>
+                                                                                        </connections>
                                                                                     </textField>
                                                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weak password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnS-Wi-zNa">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="0.0"/>
@@ -204,6 +210,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="confPassTFActoin:" destination="Y6W-OH-hqX" eventType="editingChanged" id="c2A-Zq-dMk"/>
+                                                                </connections>
                                                             </textField>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password not confirmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-xj-H9v">
                                                                 <rect key="frame" x="0.0" y="36" width="380" height="0.0"/>
