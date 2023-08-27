@@ -6,7 +6,7 @@
 
 import Foundation
 
-enum PasswordStreight {
+enum PasswordStreight: Int {
     case veryWeak /// Данный кейс когда ни один из 4-х вью не светится
     case weak
     case notVeryWeak

@@ -26,9 +26,10 @@ class CreateAccountVC: UIViewController {
     ///scrollView
     @IBOutlet weak var scrollView: UIScrollView!
     
-    private var isValidEmail = false
-    private var isConfPass = false
-//    private var passwordStreigth = false
+    /// Свойства трех обязательных полей ввода + Активация кнопки Continue
+    private var isValidEmail = false { didSet {updateContinueButtonState() }}
+    private var isConfPass = false { didSet {updateContinueButtonState() }}
+    private var passwordStreigth: PasswordStreight = .veryWeak { didSet {updateContinueButtonState() }} /// Сложность по умолчанию
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,16 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func passTFActoin(_ sender: UITextField) {
-        
+        if let passText = sender.text,
+           !passText.isEmpty {
+            passwordStreigth = VerificationCervice.isValidPassword(pass: passText)
+        } else {
+            passwordStreigth = .veryWeak ///Если не сможем вытащить пароль ставим сложность veryWeak
+        }
+        /// Скроем валидац сообщение если введен корректный passText
+        weakPasswordLbl.isHidden = passwordStreigth != .veryWeak
+        /// Подключим индикаторы сложности пароля
+        setupStrongIndicatorsViews()
     }
     
     @IBAction func confPassTFActoin(_ sender: UITextField) {
@@ -72,8 +82,43 @@ class CreateAccountVC: UIViewController {
         errorConfirmPassLbl.isHidden = isConfPass
     }
     
+    @IBAction func signInAction() {
+        navigationController?.popToRootViewController(animated: true) /// Возврат на 1 экран
+//        navigationController?.popViewController(animated: true) /// Возврат на пред экран
+    }
+    /// Предварительно создаем UserModel
+    @IBAction func continueAction() {
+        if let email = emailTF.text,
+           let pass = passwordTF.text {
+            let userModel = UserModel(name: nameTF.text, email: email, pass: pass)
+            performSegue(withIdentifier: "goToVerifScreen", sender: userModel)
+        }
+    }
     
     
+    private func setupStrongIndicatorsViews() {
+        
+//        for (index, view) in strongPassIndicatorsViews.enumerated() {
+//            if index <= (passwordStreigth.rawValue - 1) {
+//                view.alpha = 1
+//            } else {
+//                view.alpha = 0.2
+//            }
+//        }
+        /// Тоже самое через forEach
+        strongPassIndicatorsViews.enumerated().forEach { index, view in
+            if index <= (passwordStreigth.rawValue - 1) {
+                view.alpha = 1
+            } else {
+                view.alpha = 0.2
+            }
+        }
+    }
+    
+    /// Активация кнопки Continue
+    private func updateContinueButtonState() {
+        continueBtn.isEnabled = isValidEmail && isConfPass && passwordStreigth != .veryWeak
+    }
     
     
     
@@ -101,14 +146,14 @@ class CreateAccountVC: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destVC = segue.destination as? VerificationsVC,
+              let userModel = sender as? UserModel
+        else { return }
+        destVC.userModel = userModel
+    }
 }
