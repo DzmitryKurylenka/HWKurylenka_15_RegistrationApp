@@ -311,8 +311,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="88T-eR-y48">
-                                <rect key="frame" x="25" y="343.33333333333331" width="380" height="235.33333333333331"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="88T-eR-y48">
+                                <rect key="frame" x="25" y="249.99999999999997" width="380" height="235.33333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter secret code from your email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCR-mO-eUL">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="72"/>
@@ -342,6 +342,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="codeTFAction:" destination="L7l-HI-ltA" eventType="editingDidEndOnExit" id="DVs-0H-Fwr"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOE-Il-j3x">
                                                 <rect key="frame" x="0.0" y="39" width="380" height="19.333333333333329"/>
@@ -365,6 +368,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gtb-4X-96C"/>
                     <connections>
+                        <outlet property="centerYConstraint" destination="UR6-nr-rmV" id="nhv-BV-HpJ"/>
                         <outlet property="codeTF" destination="ejo-Mr-ZqE" id="fhG-8G-YwY"/>
                         <outlet property="infoLbl" destination="cb9-lO-pln" id="LiW-Xc-3Ot"/>
                         <outlet property="wrongCodeLbl" destination="TOE-Il-j3x" id="Mcy-nO-0pP"/>

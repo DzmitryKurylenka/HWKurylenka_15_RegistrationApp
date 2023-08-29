@@ -16,18 +16,67 @@ class VerificationsVC: UIViewController {
     @IBOutlet weak var infoLbl: UILabel!
     @IBOutlet weak var codeTF: UITextField!
     @IBOutlet weak var wrongCodeLbl: UILabel!
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint! ///Привязка констрейнта для поднятия клавиатуры
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
+        ///Уменьшить скрол на высоту клавиатуры
+        startKeyboardObserver()
+        ///Скрытие клавиатуры при нажатии на любом месте на экране
+        hideKeyboardWhenTappedAround()
+        
     }
     
+    @IBAction func codeTFAction(_ sender: UITextField) {
+        /// Cообщение wrongCodeLbl изначально скрыто
+        wrongCodeLbl.isHidden = true
+        guard let text = sender.text, !text.isEmpty,
+            ///Сравнение текста с рандомным кодом и приведем код к String через description
+              text == randomInt.description else {
+            /// Если условия не соблюдаются, то отобразим сообщение wrongCodeLbl
+            wrongCodeLbl.isHidden = false
+            return
+            }
+    }
+    
+    
+    private func startKeyboardObserver() {
+        ///Нотификация на открытие клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        ///Нотификация на закрытие клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        centerYConstraint.constant -= keyboardSize.height / 2 /// Поднимаем клавиатуру на половину высоты
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        centerYConstraint.constant += keyboardSize.height / 2 /// Опускаем клавиатуру на половину высоты
+    }
+    
+    
+    
+     
     private func setupUI() {
-        /// В infoLbl вкидываем значение, а если email не получили, то просто пустая строка будет " "
+        /// В infoLbl вкидываем значение, а если email не получили, то воспользуясь цепочкой опционалов поставим пустую строку  " "
         infoLbl.text = "Please enter code '\(randomInt)' from \(userModel?.email ?? "")"
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

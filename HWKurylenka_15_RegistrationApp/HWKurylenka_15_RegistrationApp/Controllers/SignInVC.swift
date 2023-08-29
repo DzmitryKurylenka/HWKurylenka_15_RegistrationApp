@@ -16,6 +16,7 @@ class SignInVC: UIViewController {
         didSet {incorrectLbl.isHidden = true}
     }
     @IBOutlet weak var signInBtn: UIButton!
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

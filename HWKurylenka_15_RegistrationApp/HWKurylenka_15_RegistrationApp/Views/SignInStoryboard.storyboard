@@ -69,8 +69,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="eo5-yY-oTT">
-                                <rect key="frame" x="25" y="288" width="343" height="228.33333333333337"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="eo5-yY-oTT">
+                                <rect key="frame" x="25" y="290" width="343" height="228.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ht-vZ-2Iq">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
@@ -140,6 +140,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qR0-o5-fB4"/>
                     <connections>
+                        <outlet property="centerYConstraint" destination="nI8-ON-cxA" id="5MQ-e1-v6m"/>
                         <outlet property="emailTF" destination="hp5-ir-eKb" id="0mE-xW-7ZR"/>
                         <outlet property="incorrectLbl" destination="RLA-9Z-YRa" id="vfZ-LI-trb"/>
                         <outlet property="passTF" destination="n7s-lq-Z61" id="ltc-Dr-ws7"/>
