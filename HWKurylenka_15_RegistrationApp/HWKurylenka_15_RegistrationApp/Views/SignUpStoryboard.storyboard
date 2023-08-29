@@ -372,11 +372,77 @@
                         <outlet property="codeTF" destination="ejo-Mr-ZqE" id="fhG-8G-YwY"/>
                         <outlet property="infoLbl" destination="cb9-lO-pln" id="LiW-Xc-3Ot"/>
                         <outlet property="wrongCodeLbl" destination="TOE-Il-j3x" id="Mcy-nO-0pP"/>
+                        <segue destination="8lW-Jx-bet" kind="show" identifier="goToWelcomeScreen" id="tNz-3z-9ii"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXN-tP-wi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286" y="-41"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aFJ-9d-23g">
+            <objects>
+                <viewController id="8lW-Jx-bet" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nBF-Hs-2Js">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="Y2n-gm-xMK">
+                                <rect key="frame" x="136.66666666666666" y="316" width="156.99999999999997" height="127.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPW-Sd-ZaR">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="37.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="systemRedColor"/>
+                                        <size key="shadowOffset" width="3" height="3"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chn-VY-zRm">
+                                        <rect key="frame" x="0.0" y="104.66666666666669" width="157" height="23"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Enter your email">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name="Helvetica-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtX-Qv-tcL">
+                                <rect key="frame" x="159.66666666666666" y="776" width="110.66666666666666" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Continue">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FE2-zA-28d"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="Y2n-gm-xMK" firstAttribute="centerX" secondItem="FE2-zA-28d" secondAttribute="centerX" id="AUb-gS-mnx"/>
+                            <constraint firstItem="dtX-Qv-tcL" firstAttribute="centerX" secondItem="FE2-zA-28d" secondAttribute="centerX" id="TYw-qf-ts9"/>
+                            <constraint firstItem="FE2-zA-28d" firstAttribute="bottom" secondItem="dtX-Qv-tcL" secondAttribute="bottom" constant="50" id="a9b-nd-puZ"/>
+                            <constraint firstItem="Y2n-gm-xMK" firstAttribute="top" secondItem="FE2-zA-28d" secondAttribute="top" constant="257" id="obO-0M-JcM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZLQ-tb-J57"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18k-Ze-ceP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="-41"/>
         </scene>
     </scenes>
     <resources>

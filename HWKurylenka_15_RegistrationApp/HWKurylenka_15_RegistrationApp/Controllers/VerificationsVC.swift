@@ -20,24 +20,27 @@ class VerificationsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
         ///Уменьшить скрол на высоту клавиатуры
         startKeyboardObserver()
         ///Скрытие клавиатуры при нажатии на любом месте на экране
         hideKeyboardWhenTappedAround()
+        /// Cообщение wrongCodeLbl изначально скрыто
+        wrongCodeLbl.isHidden = true
         
     }
     
     @IBAction func codeTFAction(_ sender: UITextField) {
-        /// Cообщение wrongCodeLbl изначально скрыто
         wrongCodeLbl.isHidden = true
         guard let text = sender.text, !text.isEmpty,
             ///Сравнение текста с рандомным кодом и приведем код к String через description
               text == randomInt.description else {
             /// Если условия не соблюдаются, то отобразим сообщение wrongCodeLbl
             wrongCodeLbl.isHidden = false
-            return
+                return
             }
+        performSegue(withIdentifier: "goToWelcomeScreen", sender: nil) /// В sender ничего не передаем
     }
     
     
@@ -50,12 +53,12 @@ class VerificationsVC: UIViewController {
     
     @objc private func keyboardWillShow(notification: Notification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        centerYConstraint.constant -= keyboardSize.height / 2 /// Поднимаем клавиатуру на половину высоты
+        centerYConstraint.constant -= keyboardSize.height / 3 /// Поднимаем клавиатуру на половину высоты
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        centerYConstraint.constant += keyboardSize.height / 2 /// Опускаем клавиатуру на половину высоты
+        centerYConstraint.constant += keyboardSize.height / 3 /// Опускаем клавиатуру на половину высоты
     }
     
     
