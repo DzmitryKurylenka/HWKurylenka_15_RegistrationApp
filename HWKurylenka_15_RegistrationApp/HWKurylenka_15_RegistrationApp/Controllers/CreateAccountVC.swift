@@ -83,8 +83,8 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func signInAction() {
-        navigationController?.popToRootViewController(animated: true) /// Возврат на 1 экран
-//        navigationController?.popViewController(animated: true) /// Возврат на пред экран
+//        navigationController?.popToRootViewController(animated: true) /// Возврат на 1 экран
+        navigationController?.popViewController(animated: true) /// Возврат на пред экран
     }
     /// Предварительно создаем UserModel
     @IBAction func continueAction() {

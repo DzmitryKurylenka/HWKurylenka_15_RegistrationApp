@@ -312,7 +312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="88T-eR-y48">
-                                <rect key="frame" x="25" y="249.99999999999997" width="380" height="235.33333333333329"/>
+                                <rect key="frame" x="25" y="250" width="380" height="235.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter secret code from your email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCR-mO-eUL">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="72"/>
@@ -379,10 +379,10 @@
             </objects>
             <point key="canvasLocation" x="286" y="-41"/>
         </scene>
-        <!--View Controller-->
+        <!--WelcomVC-->
         <scene sceneID="aFJ-9d-23g">
             <objects>
-                <viewController id="8lW-Jx-bet" sceneMemberID="viewController">
+                <viewController id="8lW-Jx-bet" customClass="WelcomVC" customModule="HWKurylenka_15_RegistrationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nBF-Hs-2Js">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -427,6 +427,9 @@
                                     </attributedString>
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueAction" destination="8lW-Jx-bet" eventType="touchUpInside" id="R48-5C-Gyl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FE2-zA-28d"/>
@@ -439,6 +442,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZLQ-tb-J57"/>
+                    <connections>
+                        <outlet property="infoLbl" destination="Chn-VY-zRm" id="i5y-pY-mm6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18k-Ze-ceP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042ACF732A9EA96000EE7724 /* WelcomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042ACF722A9EA96000EE7724 /* WelcomVC.swift */; };
 		0473D2D42A9C012900583AC7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473D2D32A9C012900583AC7 /* UserModel.swift */; };
 		0473D2D62A9C062500583AC7 /* VerificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473D2D52A9C062500583AC7 /* VerificationsVC.swift */; };
 		04744F752A97385200A4B15F /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04744F742A97385200A4B15F /* UIViewControllerExt.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042ACF722A9EA96000EE7724 /* WelcomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomVC.swift; sourceTree = "<group>"; };
 		0473D2D32A9C012900583AC7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0473D2D52A9C062500583AC7 /* VerificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationsVC.swift; sourceTree = "<group>"; };
 		04744F742A97385200A4B15F /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				047A493C2A96AFD30006D9B3 /* SignInVC.swift */,
 				047A493E2A96CB3A0006D9B3 /* CreateAccountVC.swift */,
 				0473D2D52A9C062500583AC7 /* VerificationsVC.swift */,
+				042ACF722A9EA96000EE7724 /* WelcomVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				0473D2D42A9C012900583AC7 /* UserModel.swift in Sources */,
 				047E8ACB2A967808006F9340 /* AppDelegate.swift in Sources */,
 				04B99F2B2A9A7C7C00742B2F /* VerificationService.swift in Sources */,
+				042ACF732A9EA96000EE7724 /* WelcomVC.swift in Sources */,
 				047E8ACD2A967808006F9340 /* SceneDelegate.swift in Sources */,
 				047A493F2A96CB3A0006D9B3 /* CreateAccountVC.swift in Sources */,
 				047A493D2A96AFD30006D9B3 /* SignInVC.swift in Sources */,

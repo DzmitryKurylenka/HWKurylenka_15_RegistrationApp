@@ -12,6 +12,8 @@ class VerificationsVC: UIViewController {
     
     ///Сделаем рандомное число
     let randomInt = Int.random(in: 100000 ... 999999)
+    /// Таймер при неправильно введенном коде перед переходом на велком скрин
+    var sleepTime = 3
     
     @IBOutlet weak var infoLbl: UILabel!
     @IBOutlet weak var codeTF: UITextField!
@@ -38,6 +40,16 @@ class VerificationsVC: UIViewController {
               text == randomInt.description else {
             /// Если условия не соблюдаются, то отобразим сообщение wrongCodeLbl
             wrongCodeLbl.isHidden = false
+            /// Логика таймера при неправильно введенном коде перед переходом на велком скрин
+            sender.isUserInteractionEnabled = false /// Запрет ввода в текст филд codeTFAction
+            wrongCodeLbl.text = "Wrong code. Please wait \(sleepTime) seconds" ///Замена сообщения на новое
+            let dispatchAfter = DispatchTimeInterval.seconds(sleepTime) /// Создание задержки
+            let deadLine = DispatchTime.now() + dispatchAfter /// Создание задержки
+            DispatchQueue.main.asyncAfter(deadline: deadLine) {
+                sender.isUserInteractionEnabled = true /// Обращение к текст филду и разблокировка его через интервал времени
+                self.wrongCodeLbl.isHidden = true
+                self.sleepTime *= 2 /// Увеличение временного интервала х2
+            }
                 return
             }
         performSegue(withIdentifier: "goToWelcomeScreen", sender: nil) /// В sender ничего не передаем
@@ -61,33 +73,17 @@ class VerificationsVC: UIViewController {
         centerYConstraint.constant += keyboardSize.height / 3 /// Опускаем клавиатуру на половину высоты
     }
     
-    
-    
-     
     private func setupUI() {
         /// В infoLbl вкидываем значение, а если email не получили, то воспользуясь цепочкой опционалов поставим пустую строку  " "
         infoLbl.text = "Please enter code '\(randomInt)' from \(userModel?.email ?? "")"
     }
-
     
     
+    // Mark: - Navigations
     
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let destVC = segue.destination as? WelcomVC else { return }
+        destVC.userModel = userModel
     }
-    */
 
 }
