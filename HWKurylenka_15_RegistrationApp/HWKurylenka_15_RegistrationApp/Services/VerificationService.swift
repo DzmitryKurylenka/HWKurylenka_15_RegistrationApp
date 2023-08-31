@@ -37,9 +37,6 @@ class VerificationCervice {
         }
     }
     
-    
-    
-    
     /// Сделаем статические свойства
     static func isValidEmail (email: String) -> Bool {
         /// Для валидации почты. Забираем электронку

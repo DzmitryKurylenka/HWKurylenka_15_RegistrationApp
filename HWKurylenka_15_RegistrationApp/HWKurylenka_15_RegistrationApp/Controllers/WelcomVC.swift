@@ -18,8 +18,10 @@ class WelcomVC: UIViewController {
     }
     
     @IBAction func continueAction() {
-        // TODO: save data
-        /// Возвращение на самый первый экран
+        /// Извлечение UserModel?
+        guard let userModel = userModel else { return }
+        UserDefaultsService.saveUserModel(userModel: userModel)
+        /// Возвращение на самый первый экран (PopToRootVC)
         navigationController?.popToRootViewController(animated: true)
     }
     
